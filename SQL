@@ -1,0 +1,7 @@
+SINGLE ROW,CONVERSION & AGGREGATE FUNCTIONS
+  Maximum Credit Limit (Q-2222) - select max(credit_limit) as MAX_LIMIT from customer 
+  Minimum Total Amount (Q-2223) - select min(total) as min_total from invoice
+  Total Balance(Q-2224) - select sum(balance) as total_balance from invoice
+  Customer Count (Q-2225) - select count (*) as customer_count from customer
+  Average Payment (Q-2226) - select avg(amount) as average_payment from payment 
+  select * from purchase_order where to_char(created_type,'YYYY') = 2016
