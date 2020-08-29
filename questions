@@ -1,0 +1,6 @@
+Write a query to display shipment_entity id, name and identification number of all the shipment_entity that have credit_limit greater than the credit_limit of shipment where name as 'Air Conditioner'. Display the records sorted in ascending order based on id.
+
+Use: ANY
+
+Click here to view the entire schema.
+
