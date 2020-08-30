@@ -5,3 +5,22 @@ SINGLE ROW,CONVERSION & AGGREGATE FUNCTIONS
   Customer Count (Q-2225) - select count (*) as customer_count from customer
   Average Payment (Q-2226) - select avg(amount) as average_payment from payment 
   select * from purchase_order where to_char(created_type,'YYYY') = 2016
+
+Write a query to display first_name, last_name, phone_number, email of the contact details and If there is a null value in last_name then replace it with 'first_name' and give an alias name as 'updated_last_name'. Display the records in descending order based on their first_name.
+
+select first_name, last_name, phone_number, email, nvl(last_name, first_name) as updated_last_name from contact order by first_name desc
+
+Write a query to display the paper_invoice_batch_number, due_date, last_reminder and balance of the invoice details and if the balance is greater than or equal to  '25000' then display it as 'Overdue' or else 'Nil' with an alias name as 'due_status' of all the invoice. Display the records in descending order based on their balance.
+select paper_invoice_batch_number, due_date, last_reminder, balance, 
+(case 
+when balance >= 25000 then 'Overdue'
+else 'NIL'
+end) as due_status
+from invoice
+order by balance desc;
+
+select id, due_date, total, balance
+from invoice
+where created_time BETWEEN TO_DATE('2015-01-01','YYYY-MM-DD') and
+ TO_DATE('2015-03-31','YYYY-MM-DD') 
+ ORDER BY balance desc
